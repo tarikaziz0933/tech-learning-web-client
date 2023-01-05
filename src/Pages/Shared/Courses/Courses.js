@@ -1,11 +1,9 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
-import ShowCourseDetails from '../ShowCourseDetails/ShowCourseDetails';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
-const CourseDetails = () => {
-    const courseDetails = useLoaderData();
-    console.log(courseDetails);
+const Courses = ({ course }) => {
     const {
         image_url,
         title,
@@ -14,9 +12,10 @@ const CourseDetails = () => {
         details,
         category_name,
         _id
-    } = courseDetails;
+    } = course;
+    console.log(course);
     return (
-        <div>
+        <div className='mb-5'>
             <Card>
                 <Card.Img variant="top" src={image_url} />
                 <Card.Body>
@@ -32,13 +31,13 @@ const CourseDetails = () => {
                     <Card.Text className="fs-5 text-muted">{details}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-muted text-center p-0">
-                    <Link to={`/home`}>
-                        <Button variant="primary w-100  card-button">DBack To Home</Button>
+                    <Link to={`/courseDetails/${_id}`}>
+                        <Button variant="primary w-100  card-button">Details</Button>
                     </Link>
                 </Card.Footer>
             </Card>
-        </div>
+        </div >
     );
 };
 
-export default CourseDetails;
+export default Courses;
