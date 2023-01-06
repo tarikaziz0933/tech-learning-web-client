@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Button, ButtonGroup } from 'react-bootstrap';
 import { FaGoogle, FaGithub } from "react-icons/fa";
@@ -14,7 +14,8 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || '/';
 
-    const googleProvider = new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -23,6 +24,16 @@ const Login = () => {
                 console.log(user);
             })
             .catch(error => console.log(error));
+    }
+
+    const handleGitHubSignIn = () => {
+        providerLogin(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(e => console.log(e));
+
     }
 
     const handleSubmit = event => {
@@ -56,9 +67,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
                 <Button className='mb-2' variant="primary" type="submit">
                     Login
                 </Button>
@@ -73,7 +82,7 @@ const Login = () => {
             <ButtonGroup vertical>
                 <div className='d-flex'>
                     <Button onClick={handleGoogleSignIn} className='mb-2 me-3' variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
-                    <Button className='mb-2' variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                    <Button onClick={handleGitHubSignIn} className='mb-2' variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
                 </div>
             </ButtonGroup>
 

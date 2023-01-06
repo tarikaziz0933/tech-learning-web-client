@@ -5,6 +5,7 @@ import Category from "../../Pages/Category/Category";
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
+import QuesAnswering from "../../Pages/QuesAnswering/QuesAnswering";
 import Registration from "../../Pages/Registration/Registration";
 import TermsAndConditions from "../../Pages/TermsAndConditions/TermsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -45,6 +46,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/answeringques',
+                element: <QuesAnswering></QuesAnswering>
             },
             {
                 path: '/terms',
