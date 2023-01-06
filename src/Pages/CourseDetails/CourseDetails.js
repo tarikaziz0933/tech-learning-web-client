@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
-import ShowCourseDetails from '../ShowCourseDetails/ShowCourseDetails';
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
@@ -13,7 +12,6 @@ const CourseDetails = () => {
         rating,
         details,
         category_name,
-        _id
     } = courseDetails;
     return (
         <div>
