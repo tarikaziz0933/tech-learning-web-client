@@ -31,7 +31,7 @@ const CourseDetails = () => {
                 </Card.Body>
                 <Card.Footer className="text-muted text-center p-0">
                     <Link to={`/home`}>
-                        <Button variant="primary w-100  card-button">DBack To Home</Button>
+                        <Button variant="primary w-100  card-button">Back To Home</Button>
                     </Link>
                 </Card.Footer>
             </Card>
