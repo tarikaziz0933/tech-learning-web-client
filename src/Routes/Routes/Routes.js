@@ -18,22 +18,22 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://b610-lerning-platform-server-side-tarikaziz0933.vercel.app/courses')
+                loader: () => fetch('https://tech-learning-web-server.vercel.app/courses')
             },
             {
                 path: '/home',
                 element: <Home></Home>,
-                loader: () => fetch('https://b610-lerning-platform-server-side-tarikaziz0933.vercel.app/courses')
+                loader: () => fetch('https://tech-learning-web-server.vercel.app/courses')
             },
             {
                 path: '/category/:id',
                 element: <PrivateRoute><Category></Category></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-tarikaziz0933.vercel.app/courses/category/${params.id}`)
+                loader: ({ params }) => fetch(`https://tech-learning-web-server.vercel.app/courses/category/${params.id}`)
             },
             {
                 path: '/courseDetails/:id',
                 element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-tarikaziz0933.vercel.app/courses/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://tech-learning-web-server.vercel.app/courses/course/${params.id}`)
             },
             {
                 path: '/login',

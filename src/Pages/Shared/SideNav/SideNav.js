@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SideNav = () => {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('https://b610-lerning-platform-server-side-tarikaziz0933.vercel.app/categories')
+        fetch('https://tech-learning-web-server.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
