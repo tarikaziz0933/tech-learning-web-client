@@ -16,8 +16,8 @@ const Courses = ({ course }) => {
     console.log(course);
     return (
         <div className='mb-5'>
-            <Card>
-                <Card.Img variant="top" src={image_url} />
+            <Card className='h-10'>
+                <Card.Img style={{ height: "200px" }} variant="top" src={image_url} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <p className="d-flex justify-content-between">
